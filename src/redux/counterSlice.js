@@ -18,11 +18,15 @@ const counterSlice = createSlice({
         },
         reset:(state)=>{
             state.count=0
+        },
+        // if arugnment:- action is used 
+        incrementByNumber:(state,action)=>{
+            state.count+=action.payload
         }
     }
 })
 // to components
-export const { increment, decrement, reset} = counterSlice.actions
+export const { increment, decrement, reset,incrementByNumber} = counterSlice.actions
 // default is reducer
 // to store
 export default counterSlice.reducer
